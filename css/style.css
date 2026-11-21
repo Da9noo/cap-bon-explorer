@@ -1,11 +1,5 @@
-:root {
-  --bleu: #0b6e8a;
-  --terre: #d9643a;
-  --sable: #f6efe4;
-}
-
 body {
-  background-color: var(--sable);
+  background-color: #f6efe4;
   font-family: "Segoe UI", Arial, sans-serif;
   color: #2b2b2b;
 }
@@ -13,12 +7,12 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--bleu);
+  color: #0b6e8a;
 }
 
 header.text-bg-dark,
 footer.text-bg-dark {
-  background-color: var(--bleu) !important;
+  background-color: #0b6e8a !important;
 }
 
 header h1 {
@@ -36,7 +30,7 @@ header h1 {
 }
 
 .navbar .nav-link:hover {
-  color: var(--terre);
+  color: #d9643a !important;
 }
 
 .card {
@@ -60,8 +54,8 @@ header h1 {
 }
 
 .btn-primary {
-  --bs-btn-bg: var(--terre);
-  --bs-btn-border-color: var(--terre);
+  --bs-btn-bg: #d9643a;
+  --bs-btn-border-color: #d9643a;
   --bs-btn-hover-bg: #b84f28;
   --bs-btn-hover-border-color: #b84f28;
 }
@@ -70,15 +64,15 @@ header h1 {
   width: 100%;
   padding: 8px 12px;
   margin: 8px 0 16px;
-  border: 1px solid var(--bleu);
+  border: 1px solid #0b6e8a;
   border-radius: 8px;
 }
 
 #recherche:focus,
 .form-control:focus {
   outline: none;
-  border-color: var(--terre);
-  box-shadow: 0 0 6px var(--terre);
+  border-color: #d9643a;
+  box-shadow: 0 0 6px #d9643a;
 }
 
 @media (max-width: 576px) {
@@ -89,4 +83,9 @@ header h1 {
   header h1 {
     font-size: 1.6rem;
   }
+}
+#banniere {
+  background-image: url("../images/banner.jpg");
+  margin: auto;
+  border-radius: 12px;
 }
