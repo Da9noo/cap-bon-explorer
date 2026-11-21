@@ -1,3 +1,4 @@
+// the list of the 8 activities
 const activites = [
   {
     id: "A01",
@@ -80,21 +81,28 @@ const activites = [
       "Cette promenade à Hammamet est pensée pour les amateurs de photo. Vous apprenez à cadrer la médina, la mer et la lumière de fin de journée. Un accompagnateur vous donne des conseils simples, avec un téléphone ou un appareil.",
   },
 ];
-let categorieChoisie = "Toutes";
-const boutons = document.querySelectorAll("#filtres button");
+
+// the elements we need from the page
 const champRecherche = document.getElementById("recherche");
 const cartes = document.querySelectorAll("#liste > div");
+const boutons = document.querySelectorAll("#filtres button");
 const compteur = document.getElementById("compteur");
 const messageAucun = document.getElementById("aucun-resultat");
 
+// the category chosen right now, we start with all of them
+let categorieChoisie = "Toutes";
+
+// this function shows or hides each card depending on the search and the category
 function afficherCartes() {
   const mot = champRecherche.value.toLowerCase();
   let visibles = 0;
 
+  // we go through the 8 cards one by one
   for (let i = 0; i < cartes.length; i++) {
     const activite = activites[i];
     const texte = (activite.titre + " " + activite.lieu).toLowerCase();
 
+    // the card must match the search and the category at the same time
     const motOk = texte.includes(mot);
     const categorieOk =
       categorieChoisie === "Toutes" || activite.categorie === categorieChoisie;
@@ -107,8 +115,10 @@ function afficherCartes() {
     }
   }
 
+  // update the counter
   compteur.innerText = visibles;
 
+  // show the message only when nothing matches
   if (visibles === 0) {
     messageAucun.hidden = false;
   } else {
@@ -116,10 +126,35 @@ function afficherCartes() {
   }
 }
 
+// every time the visitor types, we refresh the cards
+champRecherche.addEventListener("input", afficherCartes);
+
+// every time a filter button is clicked, we save its category and refresh
 for (let i = 0; i < boutons.length; i++) {
   boutons[i].addEventListener("click", function () {
     categorieChoisie = boutons[i].getAttribute("data-categorie");
     afficherCartes();
   });
 }
-champRecherche.addEventListener("input", afficherCartes);
+
+// the details part
+const boutonsDetails = document.querySelectorAll("#liste button");
+
+// puts the info of the activity number i in the modal
+function afficherDetails(i) {
+  let activite = activites[i];
+
+  document.getElementById("modalTitre").innerText = activite.titre;
+  document.getElementById("modalInfos").innerText =
+    activite.lieu + " · " + activite.categorie + " · " + activite.duree;
+  document.getElementById("modalDescription").innerText = activite.description;
+  document.getElementById("modalPrix").innerText =
+    activite.prix + " TND / personne";
+}
+
+// each "voir les détails" button sends its own number to the function
+for (let i = 0; i < boutonsDetails.length; i++) {
+  boutonsDetails[i].addEventListener("click", function () {
+    afficherDetails(i);
+  });
+}

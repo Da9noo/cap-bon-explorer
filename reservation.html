@@ -89,30 +89,18 @@
             <label for="activite" class="form-label">Activité choisie</label>
             <select id="activite" class="form-select">
               <option value="">-- Choisir une activité --</option>
-              <option value="A01" data-prix="20">
-                Découverte de la médina (20 TND)
-              </option>
-              <option value="A02" data-prix="35">
+              <option value="A01">Découverte de la médina (20 TND)</option>
+              <option value="A02">
                 Atelier d'initiation à la poterie (35 TND)
               </option>
-              <option value="A03" data-prix="30">
+              <option value="A03">
                 Parcours découverte de Kerkouane (30 TND)
               </option>
-              <option value="A04" data-prix="25">
-                Randonnée découverte (25 TND)
-              </option>
-              <option value="A05" data-prix="40">
-                Circuit du littoral (40 TND)
-              </option>
-              <option value="A06" data-prix="25">
-                Peinture sur céramique (25 TND)
-              </option>
-              <option value="A07" data-prix="15">
-                Découverte d'un marché local (15 TND)
-              </option>
-              <option value="A08" data-prix="30">
-                Promenade photographique (30 TND)
-              </option>
+              <option value="A04">Randonnée découverte (25 TND)</option>
+              <option value="A05">Circuit du littoral (40 TND)</option>
+              <option value="A06">Peinture sur céramique (25 TND)</option>
+              <option value="A07">Découverte d'un marché local (15 TND)</option>
+              <option value="A08">Promenade photographique (30 TND)</option>
             </select>
           </div>
 
@@ -181,8 +169,7 @@
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="accepte" />
               <label class="form-check-label" for="accepte">
-                J'accepte les conditions de cette simulation (aucune réservation
-                réelle).
+                J'accepte les conditions de cette simulation.
               </label>
             </div>
           </div>
@@ -213,25 +200,20 @@
         </button>
       </form>
 
-      <!-- Récapitulatif -->
+      <!-- Recapitulatif -->
       <div id="recap" class="alert alert-info my-5" hidden>
         <h2 class="h5">Récapitulatif de la simulation</h2>
         <p>Activité : <strong id="recapActivite"></strong></p>
         <p>Date : <strong id="recapDate"></strong></p>
         <p>Participants : <strong id="recapParticipants"></strong></p>
         <p>Total : <strong id="recapTotal"></strong> TND</p>
-        <p class="mb-0">
-          Simulation enregistrée localement à l'écran : aucune réservation
-          réelle n'a été effectuée.
-        </p>
+        <p class="mb-0">reservation enregistrée</p>
       </div>
     </main>
 
     <footer class="text-bg-dark py-5">
       <div class="container">
-        <p class="mb-2">
-          © 2026 Cap Bon Explorer, projet pédagogique (données fictives)
-        </p>
+        <p class="mb-2">© 2026 Cap Bon Explorer</p>
         <a class="btn btn-link btn-sm" href="index.html">Accueil</a>
         <a class="btn btn-link btn-sm" href="activites.html">Activités</a>
         <a class="btn btn-link btn-sm" href="agenda.html">Agenda</a>

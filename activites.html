@@ -99,26 +99,12 @@
         <p><span id="compteur">8</span> activités affichées</p>
       </section>
 
-      <!-- Détails de l'activité choisie -->
-      <div id="details" class="alert alert-info" hidden>
-        <h2 class="h5" id="detailTitre"></h2>
-        <p class="small" id="detailInfos"></p>
-        <p id="detailDescription"></p>
-        <p id="detailPrix"></p>
-        <a
-          id="detailReserver"
-          href="reservation.html"
-          class="btn btn-primary btn-sm"
-          >Réserver</a
-        >
-      </div>
-
       <div id="aucun-resultat" class="alert alert-info" hidden>
         Aucune activité trouvée.
       </div>
 
       <section id="liste" class="row g-3">
-        <div class="col-md-6 col-xl-4" data-id="A01" data-categorie="Culture">
+        <div class="col-md-6 col-xl-4">
           <article class="card h-100 shadow-sm">
             <img src="images/medina.jpg" alt="Ruelle de la médina de Nabeul" />
             <div class="card-body">
@@ -132,7 +118,8 @@
               <button
                 type="button"
                 class="btn btn-outline-primary btn-sm"
-                data-id="A01"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
               >
                 Voir les détails
               </button>
@@ -143,7 +130,7 @@
           </article>
         </div>
 
-        <div class="col-md-6 col-xl-4" data-id="A02" data-categorie="Artisanat">
+        <div class="col-md-6 col-xl-4">
           <article class="card h-100 shadow-sm">
             <img
               src="images/poterie.jpg"
@@ -158,7 +145,8 @@
               <button
                 type="button"
                 class="btn btn-outline-primary btn-sm"
-                data-id="A02"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
               >
                 Voir les détails
               </button>
@@ -169,7 +157,7 @@
           </article>
         </div>
 
-        <div class="col-md-6 col-xl-4" data-id="A03" data-categorie="Culture">
+        <div class="col-md-6 col-xl-4">
           <article class="card h-100 shadow-sm">
             <img
               src="images/kerkouane.jpg"
@@ -184,7 +172,8 @@
               <button
                 type="button"
                 class="btn btn-outline-primary btn-sm"
-                data-id="A03"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
               >
                 Voir les détails
               </button>
@@ -195,7 +184,7 @@
           </article>
         </div>
 
-        <div class="col-md-6 col-xl-4" data-id="A04" data-categorie="Nature">
+        <div class="col-md-6 col-xl-4">
           <article class="card h-100 shadow-sm">
             <img
               src="images/randonnee.jpg"
@@ -210,7 +199,8 @@
               <button
                 type="button"
                 class="btn btn-outline-primary btn-sm"
-                data-id="A04"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
               >
                 Voir les détails
               </button>
@@ -221,7 +211,7 @@
           </article>
         </div>
 
-        <div class="col-md-6 col-xl-4" data-id="A05" data-categorie="Nature">
+        <div class="col-md-6 col-xl-4">
           <article class="card h-100 shadow-sm">
             <img
               src="images/littoral.jpg"
@@ -236,7 +226,8 @@
               <button
                 type="button"
                 class="btn btn-outline-primary btn-sm"
-                data-id="A05"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
               >
                 Voir les détails
               </button>
@@ -247,7 +238,7 @@
           </article>
         </div>
 
-        <div class="col-md-6 col-xl-4" data-id="A06" data-categorie="Artisanat">
+        <div class="col-md-6 col-xl-4">
           <article class="card h-100 shadow-sm">
             <img
               src="images/ceramique.jpg"
@@ -264,7 +255,8 @@
               <button
                 type="button"
                 class="btn btn-outline-primary btn-sm"
-                data-id="A06"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
               >
                 Voir les détails
               </button>
@@ -275,11 +267,7 @@
           </article>
         </div>
 
-        <div
-          class="col-md-6 col-xl-4"
-          data-id="A07"
-          data-categorie="Découverte"
-        >
+        <div class="col-md-6 col-xl-4">
           <article class="card h-100 shadow-sm">
             <img
               src="images/marche.jpg"
@@ -294,7 +282,8 @@
               <button
                 type="button"
                 class="btn btn-outline-primary btn-sm"
-                data-id="A07"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
               >
                 Voir les détails
               </button>
@@ -305,11 +294,7 @@
           </article>
         </div>
 
-        <div
-          class="col-md-6 col-xl-4"
-          data-id="A08"
-          data-categorie="Découverte"
-        >
+        <div class="col-md-6 col-xl-4">
           <article class="card h-100 shadow-sm">
             <img
               src="images/photo.jpg"
@@ -324,7 +309,8 @@
               <button
                 type="button"
                 class="btn btn-outline-primary btn-sm"
-                data-id="A08"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetails"
               >
                 Voir les détails
               </button>
@@ -337,11 +323,40 @@
       </section>
     </main>
 
+    <div class="modal fade" id="modalDetails" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title h5" id="modalTitre"></h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fermer"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="small text-secondary" id="modalInfos"></p>
+            <p id="modalDescription"></p>
+            <p id="modalPrix"></p>
+          </div>
+          <div class="modal-footer">
+            <a href="reservation.html" class="btn btn-primary">Réserver</a>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fermer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer class="text-bg-dark py-5">
       <div class="container">
-        <p class="mb-2">
-          © 2026 Cap Bon Explorer, projet pédagogique (données fictives)
-        </p>
+        <p class="mb-2">© 2026 Cap Bon Explorer</p>
         <a class="btn btn-link btn-sm" href="index.html">Accueil</a>
         <a class="btn btn-link btn-sm" href="activites.html">Activités</a>
         <a class="btn btn-link btn-sm" href="agenda.html">Agenda</a>
