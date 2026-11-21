@@ -1,24 +1,187 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Accueil</title>
-    <link rel="stylesheet" href="main.css" />
+    <title>Cap Bon Explorer | Accueil</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <header>
-      <img src="" alt="" />
-      <h1>Cap bon Explorer</h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="">Accueil</a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-      </ul>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Cap Bon Explorer</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-label="Ouvrir le menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="activites.html">Activités</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="agenda.html">Agenda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reservation.html">Réservation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
+
+    <header class="text-bg-dark py-5">
+      <div class="container">
+        <img src="images/logo.png" alt="Logo Cap Bon Explorer" class="logo" />
+        <span class="badge text-bg-info mb-2"
+          >ISET Nabeul · Cap Bon Explorer</span
+        >
+        <h1>Découvrez le Cap Bon</h1>
+        <p class="lead mb-2">
+          Cap Bon Explorer vous invite à découvrir le patrimoine, les
+          savoir-faire et les paysages du Cap Bon. Parcourez nos expériences,
+          choisissez une activité et préparez votre visite grâce à une
+          simulation de réservation simple et transparente.
+        </p>
+        <a href="activites.html" class="btn btn-primary btn-lg"
+          >Découvrir les activités</a
+        >
+      </div>
+    </header>
+
+    <main class="container py-5">
+      <img src="images/banner.jpg" alt="Côte du Cap Bon" class="banniere" />
+
+      <section class="my-5">
+        <h2>Qui sommes-nous ?</h2>
+        <p>
+          Cap Bon Explorer est une entreprise spécialisée dans la promotion du
+          tourisme et des activités de loisirs dans la région du Cap Bon. Nous
+          proposons une variété d'expériences pour tous les goûts, allant des
+          visites culturelles aux activités de plein air.
+        </p>
+        <p>
+          Écris ici ton deuxième paragraphe (80 à 120 mots au total pour la
+          section).
+        </p>
+      </section>
+
+      <section class="my-5">
+        <h2 class="mb-2">Nos expériences à la une</h2>
+        <div class="row g-3">
+          <div class="col-md-6 col-xl-4">
+            <article class="card h-100 shadow-sm">
+              <img
+                src="images/medina.jpg"
+                alt="Ruelle de la médina de Nabeul"
+              />
+              <div class="card-body">
+                <span class="badge text-bg-primary">Culture</span>
+                <h3 class="h5 mt-2">Découverte de la médina</h3>
+                <p class="small text-secondary">20 TND / personne</p>
+                <a class="btn btn-outline-primary btn-sm" href="activites.html"
+                  >Voir les activités</a
+                >
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="card h-100 shadow-sm">
+              <img
+                src="images/poterie.jpg"
+                alt="Mains façonnant de l'argile sur un tour de potier"
+              />
+              <div class="card-body">
+                <span class="badge text-bg-primary">Artisanat</span>
+                <h3 class="h5 mt-2">Atelier d'initiation à la poterie</h3>
+                <p class="small text-secondary">35 TND / personne</p>
+                <a class="btn btn-outline-primary btn-sm" href="activites.html"
+                  >Voir les activités</a
+                >
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <article class="card h-100 shadow-sm">
+              <img
+                src="images/randonnee.jpg"
+                alt="Randonneurs sur un sentier du Djebel Abderrahmane"
+              />
+              <div class="card-body">
+                <span class="badge text-bg-primary">Nature</span>
+                <h3 class="h5 mt-2">Randonnée découverte</h3>
+                <p class="small text-secondary">25 TND / personne</p>
+                <a class="btn btn-outline-primary btn-sm" href="activites.html"
+                  >Voir les activités</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="my-5">
+        <h2>Pourquoi découvrir le Cap Bon ?</h2>
+        <ul>
+          <li>
+            <strong>Un patrimoine millénaire :</strong>
+            des ruines puniques de Kerkouane aux ruelles de la médina de Nabeul.
+          </li>
+          <li>
+            <strong>Un artisanat vivant :</strong>
+            poterie et céramique se pratiquent encore dans les ateliers de la
+            région.
+          </li>
+          <li>
+            <strong>Des paysages variés :</strong>
+            montagnes, forêts et plages de sable fin se trouvent à quelques
+            kilomètres.
+          </li>
+          <li>
+            <strong>Des expériences authentiques :</strong>
+            marchés locaux, cuisine du terroir et rencontres avec les habitants.
+          </li>
+        </ul>
+      </section>
+
+      <div class="alert alert-info">
+        <h2 class="h5">Prêt à vivre l'expérience ?</h2>
+        <p>
+          Choisissez votre activité et simulez votre réservation en quelques
+          clics.
+        </p>
+        <a href="reservation.html" class="btn btn-primary"
+          >Simuler une réservation</a
+        >
+      </div>
+    </main>
+
+    <footer class="text-bg-dark py-5">
+      <div class="container">
+        <p class="mb-2">
+          © 2026 Cap Bon Explorer, projet pédagogique (données fictives)
+        </p>
+        <a class="btn btn-link btn-sm" href="index.html">Accueil</a>
+        <a class="btn btn-link btn-sm" href="activites.html">Activités</a>
+        <a class="btn btn-link btn-sm" href="agenda.html">Agenda</a>
+        <a class="btn btn-link btn-sm" href="reservation.html">Réservation</a>
+        <a class="btn btn-link btn-sm" href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

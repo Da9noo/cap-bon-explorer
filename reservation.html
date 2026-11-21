@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cap Bon Explorer | Réservation</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Cap Bon Explorer</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-label="Ouvrir le menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="activites.html">Activités</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="agenda.html">Agenda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="reservation.html">Réservation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="text-bg-dark py-5">
+      <div class="container">
+        <img src="images/logo.png" alt="Logo Cap Bon Explorer" class="logo" />
+        <span class="badge text-bg-info mb-2"
+          >ISET Nabeul · Cap Bon Explorer</span
+        >
+        <h1>Simulateur de réservation</h1>
+        <p class="lead mb-0">
+          Choisissez votre activité et calculez le prix de votre visite.
+        </p>
+      </div>
+    </header>
+
+    <main class="container py-5">
+      <div class="alert alert-info">
+        Simulation pédagogique : aucun paiement n'est effectué et aucune donnée
+        n'est envoyée.
+      </div>
+
+      <div id="erreurs" class="alert alert-danger" hidden></div>
+
+      <form id="formReservation" novalidate>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="nom" class="form-label">Nom</label>
+            <input type="text" id="nom" class="form-control" />
+          </div>
+
+          <div class="col-md-6">
+            <label for="prenom" class="form-label">Prénom</label>
+            <input type="text" id="prenom" class="form-control" />
+          </div>
+
+          <div class="col-md-6">
+            <label for="email" class="form-label">Adresse e-mail</label>
+            <input type="email" id="email" class="form-control" />
+          </div>
+
+          <div class="col-md-6">
+            <label for="telephone" class="form-label">Téléphone</label>
+            <input type="tel" id="telephone" class="form-control" />
+          </div>
+
+          <div class="col-md-6">
+            <label for="activite" class="form-label">Activité choisie</label>
+            <select id="activite" class="form-select">
+              <option value="">-- Choisir une activité --</option>
+              <option value="A01" data-prix="20">
+                Découverte de la médina (20 TND)
+              </option>
+              <option value="A02" data-prix="35">
+                Atelier d'initiation à la poterie (35 TND)
+              </option>
+              <option value="A03" data-prix="30">
+                Parcours découverte de Kerkouane (30 TND)
+              </option>
+              <option value="A04" data-prix="25">
+                Randonnée découverte (25 TND)
+              </option>
+              <option value="A05" data-prix="40">
+                Circuit du littoral (40 TND)
+              </option>
+              <option value="A06" data-prix="25">
+                Peinture sur céramique (25 TND)
+              </option>
+              <option value="A07" data-prix="15">
+                Découverte d'un marché local (15 TND)
+              </option>
+              <option value="A08" data-prix="30">
+                Promenade photographique (30 TND)
+              </option>
+            </select>
+          </div>
+
+          <div class="col-md-3">
+            <label for="date" class="form-label">Date souhaitée</label>
+            <input type="date" id="date" class="form-control" />
+          </div>
+
+          <div class="col-md-3">
+            <label for="participants" class="form-label"
+              >Participants (1 à 6)</label
+            >
+            <input
+              type="number"
+              id="participants"
+              class="form-control"
+              min="1"
+              max="6"
+              value="1"
+            />
+          </div>
+
+          <div class="col-12">
+            <p class="form-label">Type de participation</p>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="type"
+                id="typeIndividuel"
+                value="individuel"
+                checked
+              />
+              <label class="form-check-label" for="typeIndividuel"
+                >Individuel</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="type"
+                id="typeFamille"
+                value="famille"
+              />
+              <label class="form-check-label" for="typeFamille">Famille</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="type"
+                id="typeGroupe"
+                value="groupe"
+              />
+              <label class="form-check-label" for="typeGroupe">Groupe</label>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="commentaire" class="form-label">Commentaire</label>
+            <textarea id="commentaire" class="form-control" rows="3"></textarea>
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="accepte" />
+              <label class="form-check-label" for="accepte">
+                J'accepte les conditions de cette simulation (aucune réservation
+                réelle).
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Résumé du prix -->
+        <div class="card shadow-sm my-5">
+          <div class="card-body">
+            <h2 class="h5">Détail du prix</h2>
+            <p>Prix unitaire : <strong id="prixUnitaire">0</strong> TND</p>
+            <p>Sous-total : <strong id="sousTotal">0</strong> TND</p>
+            <p>
+              Remise (10 % à partir de 4 personnes) :
+              <strong id="remise">0</strong> TND
+            </p>
+            <p class="h5">Total : <strong id="total">0</strong> TND</p>
+          </div>
+        </div>
+
+        <button type="button" id="btnCalculer" class="btn btn-outline-primary">
+          Calculer / Actualiser
+        </button>
+        <button type="submit" id="btnValider" class="btn btn-primary">
+          Valider la simulation
+        </button>
+        <button type="reset" id="btnReset" class="btn btn-secondary">
+          Réinitialiser
+        </button>
+      </form>
+
+      <!-- Récapitulatif (affiché par le JS si le formulaire est valide) -->
+      <div id="recap" class="alert alert-info my-5" hidden>
+        <h2 class="h5">Récapitulatif de la simulation</h2>
+        <p>Activité : <strong id="recapActivite"></strong></p>
+        <p>Date : <strong id="recapDate"></strong></p>
+        <p>Participants : <strong id="recapParticipants"></strong></p>
+        <p>Total : <strong id="recapTotal"></strong> TND</p>
+        <p class="mb-0">
+          Simulation enregistrée localement à l'écran : aucune réservation
+          réelle n'a été effectuée.
+        </p>
+      </div>
+    </main>
+
+    <footer class="text-bg-dark py-5">
+      <div class="container">
+        <p class="mb-2">
+          © 2026 Cap Bon Explorer, projet pédagogique (données fictives)
+        </p>
+        <a class="btn btn-link btn-sm" href="index.html">Accueil</a>
+        <a class="btn btn-link btn-sm" href="activites.html">Activités</a>
+        <a class="btn btn-link btn-sm" href="agenda.html">Agenda</a>
+        <a class="btn btn-link btn-sm" href="reservation.html">Réservation</a>
+        <a class="btn btn-link btn-sm" href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/reservation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cap Bon Explorer | Activités</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Cap Bon Explorer</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-label="Ouvrir le menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="activites.html">Activités</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="agenda.html">Agenda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reservation.html">Réservation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="text-bg-dark py-5">
+      <div class="container">
+        <img src="images/logo.png" alt="Logo Cap Bon Explorer" class="logo" />
+        <span class="badge text-bg-info mb-2"
+          >ISET Nabeul · Cap Bon Explorer</span
+        >
+        <h1>Nos activités</h1>
+        <p class="lead mb-0">Découvrez toutes nos expériences au Cap Bon.</p>
+      </div>
+    </header>
+
+    <main class="container py-5">
+      <section class="my-5">
+        <label for="recherche">Rechercher une activité</label>
+        <input type="search" id="recherche" placeholder="Titre ou lieu..." />
+
+        <div id="filtres" class="mb-2">
+          <button
+            type="button"
+            class="btn btn-outline-primary btn-sm"
+            data-categorie="Toutes"
+          >
+            Toutes
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-primary btn-sm"
+            data-categorie="Culture"
+          >
+            Culture
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-primary btn-sm"
+            data-categorie="Artisanat"
+          >
+            Artisanat
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-primary btn-sm"
+            data-categorie="Nature"
+          >
+            Nature
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-primary btn-sm"
+            data-categorie="Découverte"
+          >
+            Découverte
+          </button>
+        </div>
+
+        <p><span id="compteur">8</span> activités affichées</p>
+      </section>
+
+      <!-- Détails de l'activité choisie (remplis par le JS) -->
+      <div id="details" class="alert alert-info" hidden>
+        <h2 class="h5" id="detailTitre"></h2>
+        <p class="small" id="detailInfos"></p>
+        <p id="detailDescription"></p>
+        <p id="detailPrix"></p>
+        <a
+          id="detailReserver"
+          href="reservation.html"
+          class="btn btn-primary btn-sm"
+          >Réserver</a
+        >
+      </div>
+
+      <div id="aucun-resultat" class="alert alert-info" hidden>
+        Aucune activité trouvée.
+      </div>
+
+      <section id="liste" class="row g-3">
+        <div class="col-md-6 col-xl-4" data-id="A01" data-categorie="Culture">
+          <article class="card h-100 shadow-sm">
+            <img src="images/medina.jpg" alt="Ruelle de la médina de Nabeul" />
+            <div class="card-body">
+              <span class="badge text-bg-primary">Culture</span>
+              <h2 class="h5 mt-2">Découverte de la médina</h2>
+              <p class="small text-secondary">Nabeul · 2 h</p>
+              <p>
+                Une balade entre ruelles, portes bleues et petits commerces.
+              </p>
+              <p><strong>20 TND</strong> / personne</p>
+              <button
+                type="button"
+                class="btn btn-outline-primary btn-sm"
+                data-id="A01"
+              >
+                Voir les détails
+              </button>
+              <a class="btn btn-link btn-sm" href="reservation.html"
+                >Réserver</a
+              >
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-xl-4" data-id="A02" data-categorie="Artisanat">
+          <article class="card h-100 shadow-sm">
+            <img
+              src="images/poterie.jpg"
+              alt="Mains façonnant de l'argile sur un tour de potier"
+            />
+            <div class="card-body">
+              <span class="badge text-bg-primary">Artisanat</span>
+              <h2 class="h5 mt-2">Atelier d'initiation à la poterie</h2>
+              <p class="small text-secondary">Nabeul · 1 h 30</p>
+              <p>Façonnez votre premier objet en argile avec un artisan.</p>
+              <p><strong>35 TND</strong> / personne</p>
+              <button
+                type="button"
+                class="btn btn-outline-primary btn-sm"
+                data-id="A02"
+              >
+                Voir les détails
+              </button>
+              <a class="btn btn-link btn-sm" href="reservation.html"
+                >Réserver</a
+              >
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-xl-4" data-id="A03" data-categorie="Culture">
+          <article class="card h-100 shadow-sm">
+            <img
+              src="images/kerkouane.jpg"
+              alt="Ruines puniques de Kerkouane au bord de la mer"
+            />
+            <div class="card-body">
+              <span class="badge text-bg-primary">Culture</span>
+              <h2 class="h5 mt-2">Parcours découverte de Kerkouane</h2>
+              <p class="small text-secondary">Kerkouane · 2 h 30</p>
+              <p>Marchez dans une cité punique face à la Méditerranée.</p>
+              <p><strong>30 TND</strong> / personne</p>
+              <button
+                type="button"
+                class="btn btn-outline-primary btn-sm"
+                data-id="A03"
+              >
+                Voir les détails
+              </button>
+              <a class="btn btn-link btn-sm" href="reservation.html"
+                >Réserver</a
+              >
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-xl-4" data-id="A04" data-categorie="Nature">
+          <article class="card h-100 shadow-sm">
+            <img
+              src="images/randonnee.jpg"
+              alt="Randonneurs sur un sentier du Djebel Abderrahmane"
+            />
+            <div class="card-body">
+              <span class="badge text-bg-primary">Nature</span>
+              <h2 class="h5 mt-2">Randonnée découverte</h2>
+              <p class="small text-secondary">Djebel Abderrahmane · 3 h</p>
+              <p>Un sentier de montagne avec vue sur la mer.</p>
+              <p><strong>25 TND</strong> / personne</p>
+              <button
+                type="button"
+                class="btn btn-outline-primary btn-sm"
+                data-id="A04"
+              >
+                Voir les détails
+              </button>
+              <a class="btn btn-link btn-sm" href="reservation.html"
+                >Réserver</a
+              >
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-xl-4" data-id="A05" data-categorie="Nature">
+          <article class="card h-100 shadow-sm">
+            <img
+              src="images/littoral.jpg"
+              alt="Baie et port de pêche de Kélibia"
+            />
+            <div class="card-body">
+              <span class="badge text-bg-primary">Nature</span>
+              <h2 class="h5 mt-2">Circuit du littoral</h2>
+              <p class="small text-secondary">Kélibia · 3 h</p>
+              <p>Longez la côte entre plages, falaises et port de pêche.</p>
+              <p><strong>40 TND</strong> / personne</p>
+              <button
+                type="button"
+                class="btn btn-outline-primary btn-sm"
+                data-id="A05"
+              >
+                Voir les détails
+              </button>
+              <a class="btn btn-link btn-sm" href="reservation.html"
+                >Réserver</a
+              >
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-xl-4" data-id="A06" data-categorie="Artisanat">
+          <article class="card h-100 shadow-sm">
+            <img
+              src="images/ceramique.jpg"
+              alt="Main peignant un motif sur une assiette en céramique"
+            />
+            <div class="card-body">
+              <span class="badge text-bg-primary">Artisanat</span>
+              <h2 class="h5 mt-2">Peinture sur céramique</h2>
+              <p class="small text-secondary">Nabeul · 2 h</p>
+              <p>
+                Décorez une pièce en céramique avec les motifs de votre choix.
+              </p>
+              <p><strong>25 TND</strong> / personne</p>
+              <button
+                type="button"
+                class="btn btn-outline-primary btn-sm"
+                data-id="A06"
+              >
+                Voir les détails
+              </button>
+              <a class="btn btn-link btn-sm" href="reservation.html"
+                >Réserver</a
+              >
+            </div>
+          </article>
+        </div>
+
+        <div
+          class="col-md-6 col-xl-4"
+          data-id="A07"
+          data-categorie="Découverte"
+        >
+          <article class="card h-100 shadow-sm">
+            <img
+              src="images/marche.jpg"
+              alt="Étal d'épices et de fruits sur un marché de Nabeul"
+            />
+            <div class="card-body">
+              <span class="badge text-bg-primary">Découverte</span>
+              <h2 class="h5 mt-2">Découverte d'un marché local</h2>
+              <p class="small text-secondary">Nabeul · 1 h 30</p>
+              <p>Épices, fruits et poteries : une immersion dans le marché.</p>
+              <p><strong>15 TND</strong> / personne</p>
+              <button
+                type="button"
+                class="btn btn-outline-primary btn-sm"
+                data-id="A07"
+              >
+                Voir les détails
+              </button>
+              <a class="btn btn-link btn-sm" href="reservation.html"
+                >Réserver</a
+              >
+            </div>
+          </article>
+        </div>
+
+        <div
+          class="col-md-6 col-xl-4"
+          data-id="A08"
+          data-categorie="Découverte"
+        >
+          <article class="card h-100 shadow-sm">
+            <img
+              src="images/photo.jpg"
+              alt="Photographe sur la promenade d'Hammamet au coucher du soleil"
+            />
+            <div class="card-body">
+              <span class="badge text-bg-primary">Découverte</span>
+              <h2 class="h5 mt-2">Promenade photographique</h2>
+              <p class="small text-secondary">Hammamet · 2 h</p>
+              <p>Capturez la médina, la mer et la lumière du soir.</p>
+              <p><strong>30 TND</strong> / personne</p>
+              <button
+                type="button"
+                class="btn btn-outline-primary btn-sm"
+                data-id="A08"
+              >
+                Voir les détails
+              </button>
+              <a class="btn btn-link btn-sm" href="reservation.html"
+                >Réserver</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-bg-dark py-5">
+      <div class="container">
+        <p class="mb-2">
+          © 2026 Cap Bon Explorer, projet pédagogique (données fictives)
+        </p>
+        <a class="btn btn-link btn-sm" href="index.html">Accueil</a>
+        <a class="btn btn-link btn-sm" href="activites.html">Activités</a>
+        <a class="btn btn-link btn-sm" href="agenda.html">Agenda</a>
+        <a class="btn btn-link btn-sm" href="reservation.html">Réservation</a>
+        <a class="btn btn-link btn-sm" href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/activites.js"></script>
+  </body>
+</html>
