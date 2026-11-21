@@ -1,11 +1,92 @@
-.logo {
-  height: 50px;
+:root {
+  --bleu: #0b6e8a;
+  --terre: #d9643a;
+  --sable: #f6efe4;
 }
+
+body {
+  background-color: var(--sable);
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #2b2b2b;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--bleu);
+}
+
+header.text-bg-dark,
+footer.text-bg-dark {
+  background-color: var(--bleu) !important;
+}
+
+header h1 {
+  color: white;
+}
+
+.logo {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
 .banniere {
   width: 100%;
+  border-radius: 12px;
 }
+
+.navbar .nav-link:hover {
+  color: var(--terre);
+}
+
+.card {
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
 .card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--terre);
+  --bs-btn-border-color: var(--terre);
+  --bs-btn-hover-bg: #b84f28;
+  --bs-btn-hover-border-color: #b84f28;
+}
+
+#recherche {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 8px 0 16px;
+  border: 1px solid var(--bleu);
+  border-radius: 8px;
+}
+
+#recherche:focus,
+.form-control:focus {
+  outline: none;
+  border-color: var(--terre);
+  box-shadow: 0 0 6px var(--terre);
+}
+
+@media (max-width: 576px) {
+  .card img {
+    height: 160px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
 }
