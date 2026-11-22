@@ -8,9 +8,11 @@
     <link href="css/style.css" rel="stylesheet" />
   </head>
   <body>
+    <!-- Barre de navigation qui reste visible sur tous les écrans -->
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container">
         <a class="navbar-brand" href="index.html">Cap Bon Explorer</a>
+        <!-- Bouton pour basculer le menu sur les petits écrans -->
         <button
           class="navbar-toggler"
           type="button"
@@ -20,6 +22,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- le bloc de navigation -->
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
@@ -41,7 +44,7 @@
         </div>
       </div>
     </nav>
-
+    <!-- partie description container logo,titre et petit description -->
     <header class="text-bg-dark py-5">
       <div class="container">
         <img src="images/logo.png" alt="Logo Cap Bon Explorer" class="logo" />
@@ -54,6 +57,7 @@
     </header>
 
     <main class="container py-5">
+      <!-- section de recherche et de filtres -->
       <section class="my-5">
         <label for="recherche">Rechercher une activité</label>
         <input type="search" id="recherche" placeholder="Titre ou lieu..." />
@@ -98,11 +102,11 @@
 
         <p><span id="compteur">8</span> activités affichées</p>
       </section>
-
+      <!-- message d'absence de résultats -->
       <div id="aucun-resultat" class="alert alert-info" hidden>
         Aucune activité trouvée.
       </div>
-
+      <!-- section de la liste des activités -->
       <section id="liste" class="row g-3">
         <div class="col-md-6 col-xl-4">
           <article class="card h-100 shadow-sm">
@@ -322,7 +326,7 @@
         </div>
       </section>
     </main>
-
+    <!-- fenêtre modale pour les détails des activités (bootstrap)-->
     <div class="modal fade" id="modalDetails" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -354,6 +358,7 @@
       </div>
     </div>
 
+    <!-- pied de page -->
     <footer class="text-bg-dark py-5">
       <div class="container">
         <p class="mb-2">© 2026 Cap Bon Explorer</p>
